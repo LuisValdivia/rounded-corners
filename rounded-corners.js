@@ -37,22 +37,37 @@
                 rBottomLeft = rel(options.borderRadiusBottomLeft || 0, w);
         
             if (rTopLeft || rTopRight || rBottomRight || rBottomLeft) {
-                var maxR = Math.min(w, h) / 2
+
+                if (options.stacking === "normal") {
+                    if (point.stackY == point.stackTotal) {
+                        rBottomRight = 0;
+                        rBottomLeft = 0;
+                    } else {
+                        // no radius
+                        rBottomRight = 0;
+                        rBottomLeft = 0;
+                        rTopRight = 0;
+                        rTopLeft = 0;
+                    }
+                }
+                else {
+                    var maxR = Math.min(w, h) / 2
                     
-                if (rTopLeft > maxR) {
-                    rTopLeft = maxR;
-                }
+                    if (rTopLeft > maxR) {
+                        rTopLeft = maxR;
+                    }
 
-                if (rTopRight > maxR) {
-                    rTopRight = maxR;
-                }
+                    if (rTopRight > maxR) {
+                        rTopRight = maxR;
+                    }
 
-                if (rBottomRight > maxR) {
-                    rBottomRight = maxR;
-                }
+                    if (rBottomRight > maxR) {
+                        rBottomRight = maxR;
+                    }
 
-                if (rBottomLeft > maxR) {
-                    rBottomLeft = maxR;
+                    if (rBottomLeft > maxR) {
+                        rBottomLeft = maxR;
+                    }
                 }
 
                 // Preserve the box for data labels
