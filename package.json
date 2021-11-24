@@ -3,19 +3,20 @@
         "rounded-corners.js",
         "LICENSE"
     ],
-    "name": "highcharts-rounded-corners",
-    "version": "1.0.6",
-    "description": "This plugin allows individually rounded corners in columns and bars. Improves the looks on stacked charts and allows better alignment to the threshold line.",
+    "name": "highcharts-rounded-corners-stacked",
+    "version": "1.0.0",
+    "description": "This plugin allows individually rounded corners in columns and bars. Improves the looks on stacked charts and allows better alignment to the threshold line. Aditionaly was agregated a improvement to avoid that the bars that not are on the top have corners rounded when used is stacked chart",
     "main": "rounded-corners.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/highcharts/rounded-corners.git"
+        "url": "git+https://github.com/LuisValdivia/rounded-corners.git"
     },
     "keywords": [
         "corners",
         "rounded-corners",
         "highcharts",
-        "highcharts-addon"
+        "highcharts-addon",
+        "rounded-corners-stacked"
     ],
     "author": {
         "name": "Torstein Hønsi",
@@ -26,9 +27,9 @@
     ],
     "license" : "MIT <LICENSE>",
     "bugs": {
-        "url": "https://github.com/highcharts/rounded-corners/issues"
+        "url": "https://github.com/LuisValdivia/rounded-corners.git/issues"
     },
-    "homepage": "https://github.com/highcharts/rounded-corners#readme",
+    "homepage": "https://github.com/LuisValdivia/rounded-corners.git#readme",
     "dependencies": {
         "highcharts": ">=3.0.0"
     }

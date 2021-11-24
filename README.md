@@ -18,3 +18,6 @@ as percentage strings, they are percentages of the column width.
 ### Demo
 * [Rounded corners](http://jsfiddle.net/highcharts/b288zrch/)
 
+### NOTE
+
+Aditionaly was agregated a improvement to avoid that the bars that not are on the top have corners rounded when used is stacked chart
