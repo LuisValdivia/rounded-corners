@@ -35,21 +35,15 @@
                 rTopRight = rel(options.borderRadiusTopRight || 0, w),
                 rBottomRight = rel(options.borderRadiusBottomRight || 0, w),
                 rBottomLeft = rel(options.borderRadiusBottomLeft || 0, w);
-        
+                if (point.stackY < 0) {
+                    rBottomRight = rTopRight;
+                    rBottomLeft = rTopLeft;
+                    rTopLeft = 0;
+                    rTopRight = 0;
+                }
             if (rTopLeft || rTopRight || rBottomRight || rBottomLeft) {
                 var maxR = Math.min(w, h) / 2
-                if (options.stacking === "normal") {
-                    if (point.stackY == point.stackTotal) {
-                        rBottomRight = 0;
-                        rBottomLeft = 0;
-                    } else {
-                        // no radius
-                        rBottomRight = 0;
-                        rBottomLeft = 0;
-                        rTopRight = 0;
-                        rTopLeft = 0;
-                    }
-                } else { 
+             
                     
                 if (rTopLeft > maxR) {
                     rTopLeft = maxR;
@@ -64,9 +58,8 @@
                 }
 
                 if (rBottomLeft > maxR) {
-                    rBottomLeft = maxR;
+                    rBottomLeft = maxR;                
                 }
-            }
 
                 // Preserve the box for data labels
                 point.dlBox = point.shapeArgs;
